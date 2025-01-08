@@ -17,6 +17,7 @@ public:
 
 class MemPool {
 public:
+    MemPool() = delete;
     explicit MemPool(size_t min, size_t max = 0);
     ~MemPool();
 
