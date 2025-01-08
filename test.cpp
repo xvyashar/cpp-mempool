@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 #include "src/MemPool.h"
 
 using namespace std;

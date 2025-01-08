@@ -2,7 +2,7 @@
 
 #include <cstddef>
 #include <string>
-#include <iostream>
+#include <stdexcept>
 
 MemPool::MemPool(size_t min, size_t max): currentSize(min), max(max) {
     memChunks = new MemChunk{.addr = new char[min], .size = min};
