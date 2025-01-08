@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     MemPool pool(20);
 
-    auto val = pool.acquire<int>(7);
+    auto val = pool.tbAcquire<int>(7);
     cout << *val << endl;
 
     pool.release(val);

@@ -24,10 +24,10 @@ public:
     void* acquire(size_t size);
 
     template<typename T>
-    T* acquire();
+    T* tbAcquire();
 
     template<typename T>
-    T* acquire(T&&  defaultValue);
+    T* tbAcquire(T&&  defaultValue);
 
     void release(void* ptr);
 private:
@@ -45,12 +45,12 @@ private:
 
 // template functions implementation
 template<typename T>
-T* MemPool::acquire() {
+T* MemPool::tbAcquire() {
     return reinterpret_cast<T*>(acquire(sizeof(T)));
 }
 
 template<typename T>
-T* MemPool::acquire(T&& defaultValue) {
+T* MemPool::tbAcquire(T&& defaultValue) {
     T* mem = reinterpret_cast<T*>(acquire(sizeof(T)));
     *mem = defaultValue;
     return mem;
