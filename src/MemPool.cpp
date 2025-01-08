@@ -112,20 +112,3 @@ void MemPool::release(void* ptr) {
         current = current->next;
     } while (current != nullptr);
 }
-
-void MemPool::printChunks() {
-    std::cout << "Pool Size: " << currentSize << std::endl;
-    auto* current = memChunks;
-    int i = 0;
-    do {
-        std::cout << "MemChunk (" << i << ")" << "\n";
-        std::cout << "  - Address: " << static_cast<void*>(current) << "\n";
-        std::cout << "  - MemAddress: " << static_cast<void*>(current->addr) << "\n";
-        std::cout << "  - Size: " << current->size << "\n";
-        std::cout << "  - In Use: " << std::boolalpha << current->inuse << "\n";
-        std::cout << "  - Next: " << current->next << std::endl;
-
-        i++;
-        current = current->next;
-    } while (current != nullptr);
-}

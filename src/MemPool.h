@@ -29,8 +29,6 @@ public:
     T* acquire(T&&  defaultValue);
 
     void release(void* ptr);
-
-    void printChunks(); //debug purpose
 private:
     size_t currentSize = 0;
     size_t max = 0;
