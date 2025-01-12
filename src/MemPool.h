@@ -30,17 +30,24 @@ public:
     T* tbAcquire(T&&  defaultValue);
 
     void release(void* ptr);
+
+    void monitPool();
 private:
+    // vars
     size_t currentSize = 0;
     size_t max = 0;
 
     struct MemChunk {
-        char* addr = nullptr;
+        char* rawAddr = nullptr;
+        char* alignedAddr = nullptr;
         size_t size = 0;
         bool inuse = false;
         MemChunk* next = nullptr;
     };
     MemChunk* memChunks;
+
+    // methods
+    static size_t getAlignmentPadding(const void* addr, size_t alignment);
 };
 
 // template functions implementation

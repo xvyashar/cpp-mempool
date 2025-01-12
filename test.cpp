@@ -9,6 +9,8 @@ int main() {
     auto val = pool.tbAcquire<int>(7);
     cout << *val << endl;
 
+    pool.monitPool();
+
     pool.release(val);
     return 0;
 }
