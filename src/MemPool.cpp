@@ -142,7 +142,7 @@ void MemPool::monitPool() {
 }
 
 // private functions
-size_t MemPool::getAlignmentPadding(const void* addr, size_t alignment) {
+inline size_t MemPool::getAlignmentPadding(const void* addr, size_t alignment) {
     if (!has_single_bit(alignment)) {
         return 0;
     }

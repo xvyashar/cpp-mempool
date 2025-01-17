@@ -47,7 +47,7 @@ private:
     MemChunk* memChunks;
 
     // methods
-    static size_t getAlignmentPadding(const void* addr, size_t alignment);
+    inline static size_t getAlignmentPadding(const void* addr, size_t alignment);
 };
 
 // template functions implementation

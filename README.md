@@ -5,8 +5,8 @@ A simple, flexible, and lightweight memory pool implementation for efficient hea
 ## Overview
 This library provides a memory pool (heap) that minimizes memory fragmentation and improves performance by reusing allocated memory. The pool is highly customizable, allowing you to set both minimum and maximum sizes for better memory management.
 
-> [!WARNING]
-> Not Stable!
+> [!NOTE]
+> This project was created solely for learning purposes and is not intended for production use.
 
 ## Features
 - Efficient memory management with a custom pool for reusing memory blocks.
